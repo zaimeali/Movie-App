@@ -138,4 +138,47 @@
             </div>
         </div>
     </div>
+
+    <div class="movie-image border-b border-gray-800 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold">Images</h2>
+        </div>
+        <div class="grid grid-cols-3 gap-10 px-4 py-6">
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image1.jpg" alt="image1" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+    
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image2.jpg" alt="image2" class="hover:opacity- d-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+    
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image3.jpg" alt="image3" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image4.jpg" alt="image4" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+    
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image5.jpg" alt="image5" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+    
+                <div class="">
+                    <a href="#">
+                        <img src="/img/image6.jpg" alt="image6" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+        </div>
+    </div>
 @endsection
