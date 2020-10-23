@@ -62,5 +62,80 @@
         </div>
     </div>
 
-    
+    <div class="movie-cast border-b border-gray-800 py-16">
+        <div class="container mx-auto px-4 py-1">
+            <h2 class="text-4xl font-semibold">Cast</h2>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-5 gap-12 px-4 py-4">
+            <div class="mt-8">
+                <a href="#">
+                    <img src="/img/actor1.jpg" alt="actor1" class="hover:opacity-75 transition ease-in-out duration-150">
+                </a>
+                <div class="mt-2 flex flex-col">
+                    <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                        Real Name
+                    </a>
+                    <span class="text-sm text-gray-500 hover:text-gray-300">
+                        John Smith
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="#">
+                    <img src="/img/actor2.jpg" alt="actor2" class="hover:opacity- d-75 transition ease-in-out duration-150">
+                </a>
+                <div class="mt-2 flex flex-col">
+                    <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                        Real Name
+                    </a>
+                    <span class="text-sm text-gray-500 hover:text-gray-300">
+                        John Smith
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="#">
+                    <img src="/img/actor3.jpg" alt="actor3" class="hover:opacity-75 transition ease-in-out duration-150">
+                </a>
+                <div class="mt-2 flex flex-col">
+                    <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                        Real Name
+                    </a>
+                    <span class="text-sm text-gray-500 hover:text-gray-300">
+                        John Smith
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="#">
+                    <img src="/img/actor4.jpg" alt="actor4" class="hover:opacity-75 transition ease-in-out duration-150">
+                </a>
+                <div class="mt-2 flex flex-col">
+                    <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                        Real Name
+                    </a>
+                    <span class="text-sm text-gray-500 hover:text-gray-300">
+                        John Smith
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="#">
+                    <img src="/img/actor5.jpg" alt="actor5" class="hover:opacity-75 transition ease-in-out duration-150">
+                </a>
+                <div class="mt-2 flex flex-col">
+                    <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                        Real Name
+                    </a>
+                    <span class="text-sm text-gray-500 hover:text-gray-300">
+                        John Smith
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
