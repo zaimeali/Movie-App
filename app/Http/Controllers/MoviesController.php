@@ -25,7 +25,7 @@ class MoviesController extends Controller
         $nowPlaying = Http::withToken(config('services.tmdb.token'))
             ->get('http://api.themoviedb.org/3/movie/now_playing?api_key=d41159700e14d44ceb8c9c5895ae92de')
             ->json()["results"];
-        dump($nowPlaying);
+        // dump($nowPlaying);
 
         $genresArr = Http::withToken(config('services.tmdb.token'))
             ->get('http://api.themoviedb.org/3/genre/movie/list?api_key=d41159700e14d44ceb8c9c5895ae92de')
