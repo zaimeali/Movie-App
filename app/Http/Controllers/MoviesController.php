@@ -72,7 +72,31 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+        $movieDetail = Http::withToken(config('services.tmdb.token'))
+            ->get('http://api.themoviedb.org/3/movie/'. $id .'?api_key=d41159700e14d44ceb8c9c5895ae92de&append_to_response=credits,videos,images')
+            ->json();
+
+        // $genresArr = Http::withToken(config('services.tmdb.token'))
+        //     ->get('http://api.themoviedb.org/3/genre/movie/list?api_key=d41159700e14d44ceb8c9c5895ae92de')
+        //     ->json()["genres"];
+
+        // $genres = collect($genresArr)->mapWithKeys(function ($genre) {
+        //     return [$genre['id'] => $genre['name']];
+        // });
+
+        dump($movieDetail);
+
+        // $castMovie = Http::withToken(config('services.tmdb.token'))
+        //     ->get('http://api.themoviedb.org/3/movie/'. $id .'/credits?api_key=d41159700e14d44ceb8c9c5895ae92de')
+        //     ->json()["cast"];
+        
+        // dump($castMovie);
+
+        return view('show', [
+            'movie' => $movieDetail,
+            // 'casts' => $castMovie,
+            // 'genres' => $genres,
+        ]);
     }
 
     /**
