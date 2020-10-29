@@ -84,13 +84,15 @@ class MoviesController extends Controller
         //     return [$genre['id'] => $genre['name']];
         // });
 
-        dump($movieDetail);
+        // dump($movieDetail);
 
         // $castMovie = Http::withToken(config('services.tmdb.token'))
         //     ->get('http://api.themoviedb.org/3/movie/'. $id .'/credits?api_key=d41159700e14d44ceb8c9c5895ae92de')
         //     ->json()["cast"];
         
         // dump($castMovie);
+        
+        // dd($movieDetail['images']['backdrops']);
 
         return view('show', [
             'movie' => $movieDetail,

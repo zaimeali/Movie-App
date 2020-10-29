@@ -41,27 +41,29 @@
                         </div>
                     </div>
     
-                    <div class="mt-12">
-                        <a 
-                            href="https://youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"
-                            class="flex items-center bg-orange-500 text-gray-900 rounded font-semibold px-5 py-4
-                                hover:bg-orange-600 transition ease-in-out duration-150"
-                        >
-                            <svg 
-                                class="w-6 fill-current" 
-                                viewBox="0 0 24 24"
+                    @if (count($movie['videos']['results']) > 0)
+                        <div class="mt-12">
+                            <a 
+                                href="https://youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"
+                                class="flex inline-flex items-center bg-orange-500 text-gray-900 rounded font-semibold px-5 py-4
+                                    hover:bg-orange-600 transition ease-in-out duration-150"
                             >
-                                <path 
-                                    d="M0 0h24v24H0z" 
-                                    fill="none"
-                                />
-                                <path 
-                                    d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                                />
-                            </svg>
-                            <span class="ml-2">Play Trailer</span>
-                        </a>
-                    </div>
+                                <svg 
+                                    class="w-6 fill-current" 
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path 
+                                        d="M0 0h24v24H0z" 
+                                        fill="none"
+                                    />
+                                    <path 
+                                        d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                    />
+                                </svg>
+                                <span class="ml-2">Play Trailer</span>
+                            </a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -71,75 +73,23 @@
                 <h2 class="text-4xl font-semibold">Cast</h2>
             </div>
             <div class="grid grid-cols-3 md:grid-cols-5 gap-12 px-4 py-4">
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/actor1.jpg" alt="actor1" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2 flex flex-col">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">
-                            Real Name
-                        </a>
-                        <span class="text-sm text-gray-500 hover:text-gray-300">
-                            John Smith
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/actor2.jpg" alt="actor2" class="hover:opacity- d-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2 flex flex-col">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">
-                            Real Name
-                        </a>
-                        <span class="text-sm text-gray-500 hover:text-gray-300">
-                            John Smith
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/actor3.jpg" alt="actor3" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2 flex flex-col">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">
-                            Real Name
-                        </a>
-                        <span class="text-sm text-gray-500 hover:text-gray-300">
-                            John Smith
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/actor4.jpg" alt="actor4" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2 flex flex-col">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">
-                            Real Name
-                        </a>
-                        <span class="text-sm text-gray-500 hover:text-gray-300">
-                            John Smith
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/actor5.jpg" alt="actor5" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2 flex flex-col">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">
-                            Real Name
-                        </a>
-                        <span class="text-sm text-gray-500 hover:text-gray-300">
-                            John Smith
-                        </span>
-                    </div>
-                </div>
+                @foreach ($movie['credits']['cast'] as $cast)
+                    @if (!empty($cast['profile_path']) && $loop->index < 5)
+                        <div class="mt-8">
+                            <a href="#">
+                                <img src="http://image.tmdb.org/t/p/w500{{ $cast['profile_path'] }}" alt="actor1" class="hover:opacity-75 transition ease-in-out duration-150">
+                            </a>
+                            <div class="mt-2 flex flex-col">
+                                <a href="#" class="text-lg mt-2 hover:text-gray:300">
+                                    {{ $cast['name'] }}
+                                </a>
+                                <span class="text-sm text-gray-500 hover:text-gray-300">
+                                    {{ $cast['character'] }}
+                                </span>
+                            </div>
+                        </div>  
+                    @endif                            
+                @endforeach
             </div>
         </div>
     
@@ -148,41 +98,13 @@
                 <h2 class="text-4xl font-semibold">Images</h2>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 px-4 py-6">
+                @foreach ($movie['images']['backdrops'] as $image)
                     <div class="">
                         <a href="#">
-                            <img src="/img/image1.jpg" alt="image1" class="hover:opacity-75 transition ease-in-out duration-150">
+                            <img src="http://image.tmdb.org/t/p/w500{{ $image['file_path'] }}" alt="" class="hover:opacity-75 transition ease-in-out duration-150">
                         </a>
                     </div>
-        
-                    <div class="">
-                        <a href="#">
-                            <img src="/img/image2.jpg" alt="image2" class="hover:opacity- d-75 transition ease-in-out duration-150">
-                        </a>
-                    </div>
-        
-                    <div class="">
-                        <a href="#">
-                            <img src="/img/image3.jpg" alt="image3" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-                    </div>
-    
-                    <div class="">
-                        <a href="#">
-                            <img src="/img/image4.jpg" alt="image4" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-                    </div>
-        
-                    <div class="">
-                        <a href="#">
-                            <img src="/img/image5.jpg" alt="image5" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-                    </div>
-        
-                    <div class="">
-                        <a href="#">
-                            <img src="/img/image6.jpg" alt="image6" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-                    </div>
+                @endforeach
             </div>
         </div>
 @endsection
